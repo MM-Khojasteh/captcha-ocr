@@ -52,3 +52,13 @@ demo_gpu_usage.py
 gpu_config.py
 GPU_SETUP.md
 test_gpu_config.py
+
+
+quick_test.py
+install_tesseract.py
+setup_ocr_environment.py
+
+SETUP_GUIDE.md
+FINAL_STATUS.md
+QUICK_FIXES.md
+
