@@ -50,7 +50,6 @@ captcha_images_v2.zip
 
 demo_gpu_usage.py
 gpu_config.py
-GPU_SETUP.md
 test_gpu_config.py
 
 
@@ -58,11 +57,4 @@ quick_test.py
 install_tesseract.py
 setup_ocr_environment.py
 keras_ocr_patch.py
-
-UPDATE_SUMMARY.md
-SETUP_GUIDE.md
-FINAL_STATUS.md
-QUICK_FIXES.md
-IMPROVEMENT_SUMMARY.md
-FINAL_BENCHMARK_RESULTS.md
 
