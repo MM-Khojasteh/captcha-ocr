@@ -46,7 +46,30 @@ GPU configuration files are created locally when needed.
 ```bash
 # Download CAPTCHA dataset
 curl -LO https://github.com/AakashKumarNain/CaptchaCracker/raw/master/captcha_images_v2.zip
+```
+
+**Extract the dataset:**
+
+**For Linux/Mac:**
+```bash
 unzip captcha_images_v2.zip
+```
+
+**For Windows (PowerShell):**
+```powershell
+Expand-Archive -Path captcha_images_v2.zip -DestinationPath . -Force
+```
+
+**Alternative methods for Windows:**
+```bash
+# If Git Bash is installed
+unzip captcha_images_v2.zip
+
+# If 7-Zip is installed
+7z x captcha_images_v2.zip
+
+# Using Python (works on all platforms)
+python -c "import zipfile; zipfile.ZipFile('captcha_images_v2.zip').extractall()"
 ```
 
 ## 📁 Project Structure

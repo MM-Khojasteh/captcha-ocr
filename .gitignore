@@ -38,4 +38,17 @@ wheels/
 # OS
 .DS_Store
 Thumbs.db
+
 nul
+
+benchmark_data/
+benchmark_results/
+captcha_images_v2/
+captcha_images_v2.zip
+
+*.json
+
+demo_gpu_usage.py
+gpu_config.py
+GPU_SETUP.md
+test_gpu_config.py
