@@ -245,6 +245,7 @@ set TESSDATA_PREFIX=C:\Program Files\Tesseract-OCR\tessdata
 - **CUDA**: 11.8+ or 12.1+
 - **cuDNN**: Compatible version
 - **NVIDIA Driver**: Latest version
+- **GPU Memory**: 4GB+ recommended
 
 
 ## 🎯 Performance Summary
@@ -285,7 +286,7 @@ set TESSDATA_PREFIX=C:\Program Files\Tesseract-OCR\tessdata
 - **Tesseract**: 28.6% accuracy with fast CPU processing
 - **Custom Text Recognition**: CNN-RNN model ready for CAPTCHA training
 - **1040 CAPTCHA samples** prepared for model training
-- **GPU Support**: NVIDIA RTX 3050 6GB with CUDA 13.0
+- **GPU Support**: CUDA acceleration available
 
 **🔧 Development Status:**
 - **Keras-OCR**: Needs tuning for better accuracy (14.3% current)
@@ -293,13 +294,7 @@ set TESSDATA_PREFIX=C:\Program Files\Tesseract-OCR\tessdata
 
 **Ready to use OCR system with 85.7% accuracy and GPU acceleration! 🚀**
 
-## 📋 Latest Test Results (October 2025)
-
-### **System Configuration:**
-- **OS**: Windows 10 (Build 26100)
-- **Python**: 3.11.9
-- **GPU**: NVIDIA GeForce RTX 3050 6GB Laptop GPU
-- **CUDA**: 13.0 (PyTorch GPU: ✅, TensorFlow GPU: ❌)
+## 📋 Latest Test Results
 
 ### **Performance Metrics:**
 - **Total Test Images**: 7 generated test images
