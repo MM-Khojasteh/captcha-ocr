@@ -28,6 +28,35 @@ pip install -r requirements.txt
 # Download from: https://github.com/UB-Mannheim/tesseract/wiki
 # Add to PATH: C:\Program Files\Tesseract-OCR
 
+# Download CAPTCHA dataset
+curl -LO https://github.com/AakashKumarNain/CaptchaCracker/raw/master/captcha_images_v2.zip
+```
+
+**Extract the dataset:**
+
+**For Linux/Mac:**
+```bash
+unzip captcha_images_v2.zip
+```
+
+**For Windows (PowerShell):**
+```powershell
+Expand-Archive -Path captcha_images_v2.zip -DestinationPath . -Force
+```
+
+**Alternative methods for Windows:**
+```bash
+# If Git Bash is installed
+unzip captcha_images_v2.zip
+
+# If 7-Zip is installed
+7z x captcha_images_v2.zip
+
+# Using Python (works on all platforms)
+python -c "import zipfile; zipfile.ZipFile('captcha_images_v2.zip').extractall()"
+```
+
+```bash
 # Run benchmark
 python run_ocr_benchmark.py
 ```
@@ -213,26 +242,6 @@ set TESSDATA_PREFIX=C:\Program Files\Tesseract-OCR\tessdata
 - **Speed**: Average processing time
 - **GPU Utilization**: CUDA acceleration status
 - **Error Analysis**: Detailed failure patterns
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Run tests: `python quick_test.py`
-5. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🙏 Acknowledgments
-
-- **EasyOCR Team** for excellent multi-language support
-- **docTR Team** for document analysis capabilities
-- **Tesseract Community** for reliable OCR engine
-- **Keras-OCR Contributors** for custom training support
-- **Hugging Face** for TrOCR transformer model
 
 ---
 
