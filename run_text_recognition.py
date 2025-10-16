@@ -16,7 +16,7 @@ gpu_config.optimize_for_training()
 import numpy as np
 import tensorflow as tf
 import keras
-from keras import ops
+# from keras import ops  # Not available in this Keras version
 from keras import layers
 from keras import models
 from pathlib import Path

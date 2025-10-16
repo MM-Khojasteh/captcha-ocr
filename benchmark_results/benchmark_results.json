@@ -1,0 +1,250 @@
+{
+  "summary": {
+    "EasyOCR": {
+      "accuracy": 0.8571428571428571,
+      "avg_time": 0.08513709477015904,
+      "total_tests": 7
+    },
+    "Keras-OCR": {
+      "accuracy": 0.14285714285714285,
+      "avg_time": 0.8737454414367676,
+      "total_tests": 7
+    },
+    "TrOCR": {
+      "accuracy": 0.0,
+      "avg_time": 0.9441887310573033,
+      "total_tests": 7
+    },
+    "docTR": {
+      "accuracy": 0.8571428571428571,
+      "avg_time": 0.67855361529759,
+      "total_tests": 7
+    }
+  },
+  "details": [
+    {
+      "library": "EasyOCR",
+      "image": "test_0.png",
+      "ground_truth": "Hello World 123",
+      "recognized": "Hello World 123",
+      "match": true,
+      "time": 0.2529032230377197
+    },
+    {
+      "library": "EasyOCR",
+      "image": "test_1.png",
+      "ground_truth": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+      "recognized": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+      "match": true,
+      "time": 0.0742788314819336
+    },
+    {
+      "library": "EasyOCR",
+      "image": "test_2.png",
+      "ground_truth": "abcdefghijklmnopqrstuvwxyz",
+      "recognized": "abcdefghijklmnoparstuvwxyz",
+      "match": false,
+      "time": 0.06491613388061523
+    },
+    {
+      "library": "EasyOCR",
+      "image": "test_3.png",
+      "ground_truth": "0123456789",
+      "recognized": "0123456789",
+      "match": true,
+      "time": 0.05093836784362793
+    },
+    {
+      "library": "EasyOCR",
+      "image": "test_4.png",
+      "ground_truth": "The quick brown fox",
+      "recognized": "The quick brown fox",
+      "match": true,
+      "time": 0.05263710021972656
+    },
+    {
+      "library": "EasyOCR",
+      "image": "test_5.png",
+      "ground_truth": "Email: user@example.com",
+      "recognized": "Email: user@example.com",
+      "match": true,
+      "time": 0.058594465255737305
+    },
+    {
+      "library": "EasyOCR",
+      "image": "test_6.png",
+      "ground_truth": "Price: $99.99",
+      "recognized": "Price: $99.99",
+      "match": true,
+      "time": 0.04169154167175293
+    },
+    {
+      "library": "Keras-OCR",
+      "image": "test_0.png",
+      "ground_truth": "Hello World 123",
+      "recognized": "world 123 hello",
+      "match": false,
+      "time": 2.121239423751831
+    },
+    {
+      "library": "Keras-OCR",
+      "image": "test_1.png",
+      "ground_truth": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+      "recognized": "abcderghlinorstiune",
+      "match": false,
+      "time": 0.6569349765777588
+    },
+    {
+      "library": "Keras-OCR",
+      "image": "test_2.png",
+      "ground_truth": "abcdefghijklmnopqrstuvwxyz",
+      "recognized": "abcdefgikimnogrstuze",
+      "match": false,
+      "time": 0.6307542324066162
+    },
+    {
+      "library": "Keras-OCR",
+      "image": "test_3.png",
+      "ground_truth": "0123456789",
+      "recognized": "0123456789",
+      "match": true,
+      "time": 0.6488921642303467
+    },
+    {
+      "library": "Keras-OCR",
+      "image": "test_4.png",
+      "ground_truth": "The quick brown fox",
+      "recognized": "the quick brown fox",
+      "match": false,
+      "time": 0.6873595714569092
+    },
+    {
+      "library": "Keras-OCR",
+      "image": "test_5.png",
+      "ground_truth": "Email: user@example.com",
+      "recognized": "email useraexample com",
+      "match": false,
+      "time": 0.6773817539215088
+    },
+    {
+      "library": "Keras-OCR",
+      "image": "test_6.png",
+      "ground_truth": "Price: $99.99",
+      "recognized": "s99 pricer 99",
+      "match": false,
+      "time": 0.6936559677124023
+    },
+    {
+      "library": "TrOCR",
+      "image": "test_0.png",
+      "ground_truth": "Hello World 123",
+      "recognized": "1,000 CASHIER HELD WORLD 123 - CASHIER RECEIPT",
+      "match": false,
+      "time": 1.2590982913970947
+    },
+    {
+      "library": "TrOCR",
+      "image": "test_1.png",
+      "ground_truth": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+      "recognized": "ABODEFGHUKLMNOPORSTUWWYZ",
+      "match": false,
+      "time": 0.9772908687591553
+    },
+    {
+      "library": "TrOCR",
+      "image": "test_2.png",
+      "ground_truth": "abcdefghijklmnopqrstuvwxyz",
+      "recognized": "WWW.KKKKKKKKKKKKKKKKY.",
+      "match": false,
+      "time": 0.979867696762085
+    },
+    {
+      "library": "TrOCR",
+      "image": "test_3.png",
+      "ground_truth": "0123456789",
+      "recognized": "CASHIER: 0129456739",
+      "match": false,
+      "time": 0.623960018157959
+    },
+    {
+      "library": "TrOCR",
+      "image": "test_4.png",
+      "ground_truth": "The quick brown fox",
+      "recognized": "THANK YOU FOR THE QUICK BROWN FOR ********",
+      "match": false,
+      "time": 0.7936224937438965
+    },
+    {
+      "library": "TrOCR",
+      "image": "test_5.png",
+      "ground_truth": "Email: user@example.com",
+      "recognized": "WWW.COME.MALL:USER@EXAMPLE.COM",
+      "match": false,
+      "time": 1.109053134918213
+    },
+    {
+      "library": "TrOCR",
+      "image": "test_6.png",
+      "ground_truth": "Price: $99.99",
+      "recognized": "$500 CASH GIVE: $99.99",
+      "match": false,
+      "time": 0.8664286136627197
+    },
+    {
+      "library": "docTR",
+      "image": "test_0.png",
+      "ground_truth": "Hello World 123",
+      "recognized": "Hello World 123",
+      "match": true,
+      "time": 0.6310281753540039
+    },
+    {
+      "library": "docTR",
+      "image": "test_1.png",
+      "ground_truth": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+      "recognized": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+      "match": true,
+      "time": 0.7597091197967529
+    },
+    {
+      "library": "docTR",
+      "image": "test_2.png",
+      "ground_truth": "abcdefghijklmnopqrstuvwxyz",
+      "recognized": "abcderghijkimnoparstuvwxyz",
+      "match": false,
+      "time": 0.702934980392456
+    },
+    {
+      "library": "docTR",
+      "image": "test_3.png",
+      "ground_truth": "0123456789",
+      "recognized": "0123456789",
+      "match": true,
+      "time": 0.5856142044067383
+    },
+    {
+      "library": "docTR",
+      "image": "test_4.png",
+      "ground_truth": "The quick brown fox",
+      "recognized": "The quick brown fox",
+      "match": true,
+      "time": 0.6944305896759033
+    },
+    {
+      "library": "docTR",
+      "image": "test_5.png",
+      "ground_truth": "Email: user@example.com",
+      "recognized": "Email: user@example.com",
+      "match": true,
+      "time": 0.6974704265594482
+    },
+    {
+      "library": "docTR",
+      "image": "test_6.png",
+      "ground_truth": "Price: $99.99",
+      "recognized": "Price: $99.99",
+      "match": true,
+      "time": 0.6786878108978271
+    }
+  ]
+}

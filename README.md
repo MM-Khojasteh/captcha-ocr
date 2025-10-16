@@ -88,28 +88,56 @@ captcha-ocr/
 
 | Library | Accuracy | Avg Time | Status |
 |---------|----------|----------|--------|
-| **EasyOCR** | 85.7% | 0.078s | 🟢 **Recommended** |
-| **docTR** | 85.7% | 0.631s | 🟢 **Recommended** |
-| **Tesseract** | 28.6% | 0.164s | 🟡 **Limited Use** |
-| **Keras-OCR** | 14.3% | 0.926s | 🔴 **Needs Tuning** |
-| **TrOCR** | 0.0% | 0.795s | 🔴 **Needs Fix** |
+| **EasyOCR** | 85.7% | 0.085s | 🟢 **Recommended** |
+| **docTR** | 85.7% | 0.679s | 🟢 **Recommended** |
+| **Tesseract** | N/A | N/A | 🔴 **Not Installed** |
+| **Keras-OCR** | 14.3% | 0.874s | 🔴 **Needs Tuning** |
+| **TrOCR** | 0.0% | 0.944s | 🔴 **Needs Fix** |
 
 ### 🎯 **Usage Recommendations:**
 
-- **🥇 For Production**: EasyOCR + docTR (high accuracy, good speed)
-- **🥈 For Simple Tasks**: Tesseract (fast speed, moderate accuracy)  
+- **🥇 For Production**: EasyOCR + docTR (85.7% accuracy, excellent speed)
+- **🥈 For Fast Processing**: EasyOCR (85.7% accuracy, 0.085s avg time)  
 - **🔧 Under Development**: Keras-OCR and TrOCR (needs optimization)
+- **⚠️ Installation Required**: Tesseract (not currently installed)
 
 **Note**: Results based on enhanced test images with optimized preprocessing.
 
 ### Current System Status ✅
 
-**All 5 OCR libraries are fully functional:**
+**OCR Libraries Status:**
 - ✅ **EasyOCR**: 85.7% accuracy, GPU accelerated (Recommended)
 - ✅ **docTR**: 85.7% accuracy, GPU accelerated (Recommended)
-- ✅ **Tesseract**: 28.6% accuracy, CPU only (Fast)
+- ❌ **Tesseract**: Not installed (requires manual installation)
 - ✅ **Keras-OCR**: 14.3% accuracy, GPU accelerated (Needs tuning)
 - ✅ **TrOCR**: 0.0% accuracy, GPU accelerated (Needs preprocessing fix)
+
+**Text Recognition System:**
+- ✅ **Custom CNN-RNN Model**: Ready for training (1040 CAPTCHA samples)
+- ✅ **Dataset**: 19 unique characters, 5-character sequences
+- ✅ **Framework**: TensorFlow 2.13.0 + Keras 2.13.1
+
+## 🧠 Text Recognition System
+
+### **Custom CNN-RNN Architecture**
+- **Framework**: TensorFlow 2.13.0 + Keras 2.13.1
+- **Architecture**: CNN-RNN hybrid with CTC loss
+- **Input Shape**: (200, 50, 1) - Optimized for CAPTCHA images
+- **Training Data**: 1040 CAPTCHA samples
+- **Character Set**: 19 unique characters (2-8, b,c,d,e,f,g,m,n,p,w,x,y)
+- **Sequence Length**: Fixed 5-character sequences
+
+### **Model Components**
+- **Convolutional Layers**: Feature extraction from images
+- **Bidirectional LSTM**: Sequence processing with context awareness
+- **CTC Loss**: End-to-end training without character alignment
+- **Batch Size**: 16 (optimized for memory efficiency)
+
+### **Training Configuration**
+- **Train Split**: 90% (936 samples for training)
+- **Epochs**: 50 (configurable)
+- **Optimizer**: Adam
+- **Loss Function**: Connectionist Temporal Classification (CTC)
 
 ## 🖼️ Image Enhancement Pipeline
 
@@ -222,13 +250,18 @@ set TESSDATA_PREFIX=C:\Program Files\Tesseract-OCR\tessdata
 ## 🎯 Performance Summary
 
 ### **Production Ready Libraries**
-- **EasyOCR**: Best overall performance (85.7% accuracy, 0.078s)
-- **docTR**: Excellent accuracy with document focus (85.7% accuracy, 0.631s)
+- **EasyOCR**: Best overall performance (85.7% accuracy, 0.085s)
+- **docTR**: Excellent accuracy with document focus (85.7% accuracy, 0.679s)
 
 ### **Specialized Use Cases**
-- **Tesseract**: Fast processing for simple text (28.6% accuracy, 0.164s)
-- **Keras-OCR**: Custom training capabilities (14.3% accuracy, 0.926s)
-- **TrOCR**: Modern transformer architecture (0.0% accuracy, 0.795s)
+- **Tesseract**: Not installed (requires manual setup)
+- **Keras-OCR**: Custom training capabilities (14.3% accuracy, 0.874s)
+- **TrOCR**: Modern transformer architecture (0.0% accuracy, 0.944s)
+
+### **Text Recognition System**
+- **Custom CNN-RNN**: Ready for training (1040 CAPTCHA samples)
+- **Character Recognition**: 19 unique characters optimized
+- **Architecture**: Bidirectional LSTM with CTC loss
 
 ## 📈 Benchmark Methodology
 
@@ -244,5 +277,20 @@ set TESSDATA_PREFIX=C:\Program Files\Tesseract-OCR\tessdata
 - **Error Analysis**: Detailed failure patterns
 
 ---
+
+## 🚀 Current Status
+
+**✅ Fully Functional OCR System:**
+- **EasyOCR & docTR**: 85.7% accuracy with GPU acceleration
+- **Custom Text Recognition**: CNN-RNN model ready for CAPTCHA training
+- **1040 CAPTCHA samples** prepared for model training
+- **GPU Support**: NVIDIA RTX 3050 6GB with CUDA 13.0
+
+**⚠️ Installation Required:**
+- **Tesseract**: Manual installation needed for complete OCR coverage
+
+**🔧 Development Status:**
+- **Keras-OCR**: Needs tuning for better accuracy
+- **TrOCR**: Requires preprocessing optimization
 
 **Ready to use OCR system with 85.7% accuracy and GPU acceleration! 🚀**
