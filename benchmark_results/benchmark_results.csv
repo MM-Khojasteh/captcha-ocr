@@ -1,29 +1,36 @@
 library,image,ground_truth,recognized,match,time
-EasyOCR,test_0.png,Hello World 123,Hello World 123,True,0.2529032230377197
-EasyOCR,test_1.png,ABCDEFGHIJKLMNOPQRSTUVWXYZ,ABCDEFGHIJKLMNOPQRSTUVWXYZ,True,0.0742788314819336
-EasyOCR,test_2.png,abcdefghijklmnopqrstuvwxyz,abcdefghijklmnoparstuvwxyz,False,0.06491613388061523
-EasyOCR,test_3.png,0123456789,0123456789,True,0.05093836784362793
-EasyOCR,test_4.png,The quick brown fox,The quick brown fox,True,0.05263710021972656
-EasyOCR,test_5.png,Email: user@example.com,Email: user@example.com,True,0.058594465255737305
-EasyOCR,test_6.png,Price: $99.99,Price: $99.99,True,0.04169154167175293
-Keras-OCR,test_0.png,Hello World 123,world 123 hello,False,2.121239423751831
-Keras-OCR,test_1.png,ABCDEFGHIJKLMNOPQRSTUVWXYZ,abcderghlinorstiune,False,0.6569349765777588
-Keras-OCR,test_2.png,abcdefghijklmnopqrstuvwxyz,abcdefgikimnogrstuze,False,0.6307542324066162
-Keras-OCR,test_3.png,0123456789,0123456789,True,0.6488921642303467
-Keras-OCR,test_4.png,The quick brown fox,the quick brown fox,False,0.6873595714569092
-Keras-OCR,test_5.png,Email: user@example.com,email useraexample com,False,0.6773817539215088
-Keras-OCR,test_6.png,Price: $99.99,s99 pricer 99,False,0.6936559677124023
-TrOCR,test_0.png,Hello World 123,"1,000 CASHIER HELD WORLD 123 - CASHIER RECEIPT",False,1.2590982913970947
-TrOCR,test_1.png,ABCDEFGHIJKLMNOPQRSTUVWXYZ,ABODEFGHUKLMNOPORSTUWWYZ,False,0.9772908687591553
-TrOCR,test_2.png,abcdefghijklmnopqrstuvwxyz,WWW.KKKKKKKKKKKKKKKKY.,False,0.979867696762085
-TrOCR,test_3.png,0123456789,CASHIER: 0129456739,False,0.623960018157959
-TrOCR,test_4.png,The quick brown fox,THANK YOU FOR THE QUICK BROWN FOR ********,False,0.7936224937438965
-TrOCR,test_5.png,Email: user@example.com,WWW.COME.MALL:USER@EXAMPLE.COM,False,1.109053134918213
-TrOCR,test_6.png,Price: $99.99,$500 CASH GIVE: $99.99,False,0.8664286136627197
-docTR,test_0.png,Hello World 123,Hello World 123,True,0.6310281753540039
-docTR,test_1.png,ABCDEFGHIJKLMNOPQRSTUVWXYZ,ABCDEFGHIJKLMNOPQRSTUVWXYZ,True,0.7597091197967529
-docTR,test_2.png,abcdefghijklmnopqrstuvwxyz,abcderghijkimnoparstuvwxyz,False,0.702934980392456
-docTR,test_3.png,0123456789,0123456789,True,0.5856142044067383
-docTR,test_4.png,The quick brown fox,The quick brown fox,True,0.6944305896759033
-docTR,test_5.png,Email: user@example.com,Email: user@example.com,True,0.6974704265594482
-docTR,test_6.png,Price: $99.99,Price: $99.99,True,0.6786878108978271
+Pytesseract,test_0.png,Hello World 123,HelloWorld123,False,0.21646881103515625
+Pytesseract,test_1.png,ABCDEFGHIJKLMNOPQRSTUVWXYZ,ABCDEFGHIJKLMNOPQRSTUVWXYZ,True,0.15309453010559082
+Pytesseract,test_2.png,abcdefghijklmnopqrstuvwxyz,abcdefghijkimnopqrstuvwxyz,False,0.1685047149658203
+Pytesseract,test_3.png,0123456789,0123456789,True,0.15167975425720215
+Pytesseract,test_4.png,The quick brown fox,Thequickbrownfox,False,0.15148162841796875
+Pytesseract,test_5.png,Email: user@example.com,Email:user@example.com,False,0.19119572639465332
+Pytesseract,test_6.png,Price: $99.99,Price:$99.99,False,0.13930201530456543
+EasyOCR,test_0.png,Hello World 123,Hello World 123,True,0.24388861656188965
+EasyOCR,test_1.png,ABCDEFGHIJKLMNOPQRSTUVWXYZ,ABCDEFGHIJKLMNOPQRSTUVWXYZ,True,0.0671687126159668
+EasyOCR,test_2.png,abcdefghijklmnopqrstuvwxyz,abcdefghijklmnoparstuvwxyz,False,0.059653282165527344
+EasyOCR,test_3.png,0123456789,0123456789,True,0.05907559394836426
+EasyOCR,test_4.png,The quick brown fox,The quick brown fox,True,0.04760122299194336
+EasyOCR,test_5.png,Email: user@example.com,Email: user@example.com,True,0.06099438667297363
+EasyOCR,test_6.png,Price: $99.99,Price: $99.99,True,0.03707385063171387
+Keras-OCR,test_0.png,Hello World 123,world 123 hello,False,2.2506699562072754
+Keras-OCR,test_1.png,ABCDEFGHIJKLMNOPQRSTUVWXYZ,abcderghlinorstiune,False,0.6654388904571533
+Keras-OCR,test_2.png,abcdefghijklmnopqrstuvwxyz,abcdefgikimnogrstuze,False,0.6280157566070557
+Keras-OCR,test_3.png,0123456789,0123456789,True,0.6317598819732666
+Keras-OCR,test_4.png,The quick brown fox,the quick brown fox,False,0.7213621139526367
+Keras-OCR,test_5.png,Email: user@example.com,email useraexample com,False,0.742518424987793
+Keras-OCR,test_6.png,Price: $99.99,s99 pricer 99,False,0.6946008205413818
+TrOCR,test_0.png,Hello World 123,"1,000 CASHIER HELD WORLD 123 - CASHIER RECEIPT",False,1.2887547016143799
+TrOCR,test_1.png,ABCDEFGHIJKLMNOPQRSTUVWXYZ,ABODEFGHUKLMNOPORSTUWWYZ,False,0.9864628314971924
+TrOCR,test_2.png,abcdefghijklmnopqrstuvwxyz,WWW.KKKKKKKKKKKKKKKKY.,False,0.9837443828582764
+TrOCR,test_3.png,0123456789,CASHIER: 0129456739,False,0.6221024990081787
+TrOCR,test_4.png,The quick brown fox,THANK YOU FOR THE QUICK BROWN FOR ********,False,0.7967817783355713
+TrOCR,test_5.png,Email: user@example.com,WWW.COME.MALL:USER@EXAMPLE.COM,False,1.112739086151123
+TrOCR,test_6.png,Price: $99.99,$500 CASH GIVE: $99.99,False,0.869671106338501
+docTR,test_0.png,Hello World 123,Hello World 123,True,0.7675704956054688
+docTR,test_1.png,ABCDEFGHIJKLMNOPQRSTUVWXYZ,ABCDEFGHIJKLMNOPQRSTUVWXYZ,True,0.813819408416748
+docTR,test_2.png,abcdefghijklmnopqrstuvwxyz,abcderghijkimnoparstuvwxyz,False,0.6638321876525879
+docTR,test_3.png,0123456789,0123456789,True,0.6771926879882812
+docTR,test_4.png,The quick brown fox,The quick brown fox,True,0.8451082706451416
+docTR,test_5.png,Email: user@example.com,Email: user@example.com,True,0.8018703460693359
+docTR,test_6.png,Price: $99.99,Price: $99.99,True,0.8080568313598633

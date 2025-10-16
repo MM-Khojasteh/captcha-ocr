@@ -88,18 +88,18 @@ captcha-ocr/
 
 | Library | Accuracy | Avg Time | Status |
 |---------|----------|----------|--------|
-| **EasyOCR** | 85.7% | 0.085s | 🟢 **Recommended** |
-| **docTR** | 85.7% | 0.679s | 🟢 **Recommended** |
-| **Tesseract** | N/A | N/A | 🔴 **Not Installed** |
-| **Keras-OCR** | 14.3% | 0.874s | 🔴 **Needs Tuning** |
-| **TrOCR** | 0.0% | 0.944s | 🔴 **Needs Fix** |
+| **EasyOCR** | 85.7% | 0.082s | 🟢 **Recommended** |
+| **docTR** | 85.7% | 0.768s | 🟢 **Recommended** |
+| **Tesseract** | 28.6% | 0.167s | 🟡 **Limited Use** |
+| **Keras-OCR** | 14.3% | 0.905s | 🔴 **Needs Tuning** |
+| **TrOCR** | 0.0% | 0.951s | 🔴 **Needs Fix** |
 
 ### 🎯 **Usage Recommendations:**
 
 - **🥇 For Production**: EasyOCR + docTR (85.7% accuracy, excellent speed)
-- **🥈 For Fast Processing**: EasyOCR (85.7% accuracy, 0.085s avg time)  
+- **🥈 For Fast Processing**: EasyOCR (85.7% accuracy, 0.082s avg time)  
+- **🥉 For Simple Tasks**: Tesseract (28.6% accuracy, 0.167s avg time)
 - **🔧 Under Development**: Keras-OCR and TrOCR (needs optimization)
-- **⚠️ Installation Required**: Tesseract (not currently installed)
 
 **Note**: Results based on enhanced test images with optimized preprocessing.
 
@@ -108,7 +108,7 @@ captcha-ocr/
 **OCR Libraries Status:**
 - ✅ **EasyOCR**: 85.7% accuracy, GPU accelerated (Recommended)
 - ✅ **docTR**: 85.7% accuracy, GPU accelerated (Recommended)
-- ❌ **Tesseract**: Not installed (requires manual installation)
+- ✅ **Tesseract**: 28.6% accuracy, CPU only (Fast processing)
 - ✅ **Keras-OCR**: 14.3% accuracy, GPU accelerated (Needs tuning)
 - ✅ **TrOCR**: 0.0% accuracy, GPU accelerated (Needs preprocessing fix)
 
@@ -250,13 +250,13 @@ set TESSDATA_PREFIX=C:\Program Files\Tesseract-OCR\tessdata
 ## 🎯 Performance Summary
 
 ### **Production Ready Libraries**
-- **EasyOCR**: Best overall performance (85.7% accuracy, 0.085s)
-- **docTR**: Excellent accuracy with document focus (85.7% accuracy, 0.679s)
+- **EasyOCR**: Best overall performance (85.7% accuracy, 0.082s)
+- **docTR**: Excellent accuracy with document focus (85.7% accuracy, 0.768s)
 
 ### **Specialized Use Cases**
-- **Tesseract**: Not installed (requires manual setup)
-- **Keras-OCR**: Custom training capabilities (14.3% accuracy, 0.874s)
-- **TrOCR**: Modern transformer architecture (0.0% accuracy, 0.944s)
+- **Tesseract**: Fast processing for simple text (28.6% accuracy, 0.167s)
+- **Keras-OCR**: Custom training capabilities (14.3% accuracy, 0.905s)
+- **TrOCR**: Modern transformer architecture (0.0% accuracy, 0.951s)
 
 ### **Text Recognition System**
 - **Custom CNN-RNN**: Ready for training (1040 CAPTCHA samples)
@@ -282,15 +282,33 @@ set TESSDATA_PREFIX=C:\Program Files\Tesseract-OCR\tessdata
 
 **✅ Fully Functional OCR System:**
 - **EasyOCR & docTR**: 85.7% accuracy with GPU acceleration
+- **Tesseract**: 28.6% accuracy with fast CPU processing
 - **Custom Text Recognition**: CNN-RNN model ready for CAPTCHA training
 - **1040 CAPTCHA samples** prepared for model training
 - **GPU Support**: NVIDIA RTX 3050 6GB with CUDA 13.0
 
-**⚠️ Installation Required:**
-- **Tesseract**: Manual installation needed for complete OCR coverage
-
 **🔧 Development Status:**
-- **Keras-OCR**: Needs tuning for better accuracy
-- **TrOCR**: Requires preprocessing optimization
+- **Keras-OCR**: Needs tuning for better accuracy (14.3% current)
+- **TrOCR**: Requires preprocessing optimization (0.0% current)
 
 **Ready to use OCR system with 85.7% accuracy and GPU acceleration! 🚀**
+
+## 📋 Latest Test Results (October 2025)
+
+### **System Configuration:**
+- **OS**: Windows 10 (Build 26100)
+- **Python**: 3.11.9
+- **GPU**: NVIDIA GeForce RTX 3050 6GB Laptop GPU
+- **CUDA**: 13.0 (PyTorch GPU: ✅, TensorFlow GPU: ❌)
+
+### **Performance Metrics:**
+- **Total Test Images**: 7 generated test images
+- **Best Performer**: EasyOCR (85.7% accuracy, 0.082s)
+- **Most Balanced**: docTR (85.7% accuracy, 0.768s)
+- **Fastest**: EasyOCR (0.082s average processing time)
+
+### **Dataset Information:**
+- **CAPTCHA Samples**: 1040 images
+- **Character Set**: 19 unique characters (2-8, b,c,d,e,f,g,m,n,p,w,x,y)
+- **Sequence Length**: Fixed 5-character sequences
+- **Image Dimensions**: 200x50 pixels (optimized for CAPTCHA)

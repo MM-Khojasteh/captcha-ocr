@@ -141,6 +141,8 @@ results = []
 # Test Pytesseract
 try:
     import pytesseract
+    # Configure Tesseract path
+    pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
     print("\nTesting Pytesseract...")
     
     for img_data in test_images:

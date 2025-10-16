@@ -56,3 +56,4 @@ keras_ocr_patch.py
 configure_tesseract.py
 fix_tensorflow_gpu.py
 test_ocr_system.py
+test_tesseract_fix.py
