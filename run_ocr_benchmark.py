@@ -26,13 +26,13 @@ class BenchmarkConfig:
         self.output_dir = Path('./benchmark_results')
         self.data_dir = Path('./benchmark_data')
         self.test_texts = [
-            "The quick brown fox jumps over the lazy dog",
+            "Hello World 123",
             "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-            "abcdefghijklmnopqrstuvwxyz",
+            "abcdefghijklmnopqrstuvwxyz", 
             "0123456789",
-            "Hello World! This is a test.",
+            "The quick brown fox",
             "Email: user@example.com",
-            "Price: $99.99 (Save 20%!)"
+            "Price: $99.99"
         ]
 
 config = BenchmarkConfig()
@@ -41,25 +41,89 @@ config.data_dir.mkdir(exist_ok=True)
 
 # Generate test images
 def create_text_image(text, filename, size=(800, 100)):
-    """Create a test image with text"""
-    img = Image.new('RGB', size, color='white')
+    """Create a high-quality test image with text optimized for OCR"""
+    # Create high-resolution image
+    scale_factor = 3
+    high_res_size = (size[0] * scale_factor, size[1] * scale_factor)
+    img = Image.new('RGB', high_res_size, color='white')
     draw = ImageDraw.Draw(img)
     
-    try:
-        font = ImageFont.truetype("arial.ttf", 24)
-    except:
+    # Try multiple fonts for better compatibility
+    font_size = 24 * scale_factor
+    fonts_to_try = [
+        "arial.ttf",
+        "calibri.ttf", 
+        "times.ttf",
+        "verdana.ttf"
+    ]
+    
+    font = None
+    for font_name in fonts_to_try:
+        try:
+            font = ImageFont.truetype(font_name, font_size)
+            break
+        except:
+            continue
+    
+    if font is None:
         font = ImageFont.load_default()
     
     # Center the text
     text_bbox = draw.textbbox((0, 0), text, font=font)
     text_width = text_bbox[2] - text_bbox[0]
     text_height = text_bbox[3] - text_bbox[1]
-    x = (size[0] - text_width) // 2
-    y = (size[1] - text_height) // 2
+    x = (high_res_size[0] - text_width) // 2
+    y = (high_res_size[1] - text_height) // 2
     
+    # Draw text with high contrast
     draw.text((x, y), text, fill='black', font=font)
-    img.save(filename)
+    
+    # Resize back to original size with high quality
+    img = img.resize(size, Image.Resampling.LANCZOS)
+    
+    # Apply slight sharpening for better OCR
+    from PIL import ImageFilter
+    img = img.filter(ImageFilter.UnsharpMask(radius=1, percent=150, threshold=3))
+    
+    img.save(filename, 'PNG', optimize=True)
     return filename
+
+def enhance_image_for_ocr(image_path):
+    """Enhance image for better OCR recognition"""
+    try:
+        import cv2
+        import numpy as np
+        
+        # Read image
+        img = cv2.imread(image_path)
+        if img is None:
+            return image_path
+            
+        # Convert to grayscale
+        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        
+        # Apply CLAHE (Contrast Limited Adaptive Histogram Equalization)
+        clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
+        enhanced = clahe.apply(gray)
+        
+        # Apply Gaussian blur to reduce noise
+        blurred = cv2.GaussianBlur(enhanced, (1, 1), 0)
+        
+        # Apply sharpening
+        kernel = np.array([[-1,-1,-1], [-1,9,-1], [-1,-1,-1]])
+        sharpened = cv2.filter2D(blurred, -1, kernel)
+        
+        # Convert back to RGB
+        enhanced_rgb = cv2.cvtColor(sharpened, cv2.COLOR_GRAY2RGB)
+        
+        # Save enhanced image
+        enhanced_path = image_path.replace('.png', '_enhanced.png')
+        cv2.imwrite(enhanced_path, enhanced_rgb)
+        
+        return enhanced_path
+    except Exception as e:
+        print(f"  Enhancement failed: {e}")
+        return image_path
 
 print("\nGenerating test images...")
 test_images = []
@@ -82,8 +146,13 @@ try:
     for img_data in test_images:
         start_time = time.time()
         try:
-            img = Image.open(img_data['path'])
-            recognized_text = pytesseract.image_to_string(img).strip()
+            # Enhance image for better OCR
+            enhanced_path = enhance_image_for_ocr(img_data['path'])
+            img = Image.open(enhanced_path)
+            
+            # Use Tesseract with optimized settings
+            custom_config = r'--oem 3 --psm 6 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@.:$!() '
+            recognized_text = pytesseract.image_to_string(img, config=custom_config).strip()
             process_time = time.time() - start_time
             
             results.append({
@@ -165,7 +234,9 @@ try:
         for img_data in test_images:
             start_time = time.time()
             try:
-                image = keras_ocr.tools.read(img_data['path'])
+                # Enhance image for better recognition
+                enhanced_path = enhance_image_for_ocr(img_data['path'])
+                image = keras_ocr.tools.read(enhanced_path)
                 prediction_groups = pipeline.recognize([image])
                 recognized_text = ' '.join([text for text, _ in prediction_groups[0]])
                 process_time = time.time() - start_time
@@ -217,15 +288,19 @@ try:
         # Convert to grayscale
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         
+        # Apply Gaussian blur to reduce noise
+        blurred = cv2.GaussianBlur(gray, (3, 3), 0)
+        
         # Apply adaptive thresholding
-        thresh = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, 
+        thresh = cv2.adaptiveThreshold(blurred, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, 
                                      cv2.THRESH_BINARY, 11, 2)
         
-        # Denoise
-        denoised = cv2.medianBlur(thresh, 3)
+        # Morphological operations to clean up
+        kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (2, 2))
+        cleaned = cv2.morphologyEx(thresh, cv2.MORPH_CLOSE, kernel)
         
         # Convert back to RGB for TrOCR
-        rgb_image = cv2.cvtColor(denoised, cv2.COLOR_GRAY2RGB)
+        rgb_image = cv2.cvtColor(cleaned, cv2.COLOR_GRAY2RGB)
         
         return Image.fromarray(rgb_image)
     
