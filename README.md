@@ -16,10 +16,6 @@ This project provides a complete OCR environment with:
 ### Manual Installation
 
 ```bash
-# Clone the repository
-git clone <repository-url>
-cd captcha-ocr
-
 # Create virtual environment
 python -m venv .venv
 .venv\Scripts\activate  # Windows
@@ -51,30 +47,13 @@ captcha-ocr/
 └── README.md                    # This file
 ```
 
-**Note**: The following files/directories are not tracked in git:
-
-### Generated Files
+**Note**: The following files/directories are generated during execution and are not tracked in git:
 - `captcha_images_v2/` - Dataset directory (download required)
 - `benchmark_results/` - Benchmark outputs
 - `benchmark_data/` - Temporary benchmark data
 - `__pycache__/` - Python cache files
 - `.ipynb_checkpoints/` - Jupyter notebook checkpoints
 - `*.json` - Result files
-
-### Utility Scripts (Not in Repository)
-- `quick_test.py` - Quick OCR library test
-- `setup_ocr_environment.py` - Automated setup script
-- `install_tesseract.py` - Tesseract installation script
-- `keras_ocr_patch.py` - Keras-OCR compatibility fix
-- `gpu_config.py` - GPU configuration utility
-
-### Documentation Files (Not in Repository)
-- `UPDATE_SUMMARY.md` - Project update summary
-- `SETUP_GUIDE.md` - Detailed setup guide
-- `FINAL_STATUS.md` - System status report
-- `QUICK_FIXES.md` - Troubleshooting guide
-- `IMPROVEMENT_SUMMARY.md` - Image enhancement summary
-- `FINAL_BENCHMARK_RESULTS.md` - Complete benchmark analysis
 
 ## 📊 OCR Benchmark Results
 
@@ -210,25 +189,6 @@ set TESSDATA_PREFIX=C:\Program Files\Tesseract-OCR\tessdata
 - **cuDNN**: Compatible version
 - **NVIDIA Driver**: Latest version
 
-## 🛠️ Additional Files
-
-**Note**: The following utility scripts and documentation files are available but not included in the repository:
-
-### Setup Scripts
-- `setup_ocr_environment.py` - Complete environment setup
-- `install_tesseract.py` - Tesseract OCR installation
-- `keras_ocr_patch.py` - Keras-OCR compatibility fix
-- `gpu_config.py` - GPU configuration utility
-
-### Testing & Diagnostics
-- `quick_test.py` - Quick OCR library test
-
-### Documentation
-- `SETUP_GUIDE.md` - Detailed setup instructions
-- `FINAL_STATUS.md` - Current system status
-- `QUICK_FIXES.md` - Common troubleshooting
-- `IMPROVEMENT_SUMMARY.md` - Enhancement details
-- `FINAL_BENCHMARK_RESULTS.md` - Complete analysis
 
 ## 🎯 Performance Summary
 
